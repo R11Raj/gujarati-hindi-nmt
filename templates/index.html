@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>Gujarati Hindi MT API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link href='style.css' rel='stylesheet' type='text/css'>
+</head>
+
+<body style="font-family: 'Space Mono','Ariel','Serif';">
+ <div class="login" style="text-align:center">
+	<h1>Gujarati Hindi MT system</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post" style="padding-left:25%">
+    <table>
+        
+	<tr>
+	<td>
+	<label for="cars">Choose a translation:</label>
+  	<select name="cars" id="cars">
+    		<option value="guj">Gujarati to Hindi</option>
+      		<option value="hin">Hindi to Gujarati</option>
+ 	</select>
+	</td>
+	</tr>
+
+        <tr>
+    	<td>
+    	Enter Text to be Translated : </td><td><textarea name="input" rows="10" cols="30" placeholder="Enter your text here" required="required" />
+        </textarea>
+	</td>
+        </tr>
+              
+        <tr>
+        <td>
+        <button type="submit" style="width:80px;height:30px;" class="btn btn-primary btn-block btn-large">Translate</button>
+        </td>
+        </tr>
+    </table>
+    </form>
+
+   <br>
+   <br>
+   <h1>
+   {{ prediction_text }}
+   </h1>
+   <br>
+   <br>
+   <h3>
+ Designed and Developed by Raj Prajapati
+ </h3>
+ </div>
+
+
+</body>
+</html>
